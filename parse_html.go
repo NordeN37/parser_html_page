@@ -3,9 +3,9 @@ package parser_html_page
 import (
 	"errors"
 	"fmt"
+	"github.com/NordeN37/parser_html_page/models"
 	"github.com/PuerkitoBio/goquery"
 	"net/http"
-	"parser_html_page/models"
 )
 
 func ParseHtml(res *http.Response, selection models.Selection) (*[]models.ParseSelectionResult, error) {

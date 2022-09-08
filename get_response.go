@@ -1,8 +1,8 @@
 package parser_html_page
 
 import (
+	"github.com/NordeN37/parser_html_page/models"
 	"net/http"
-	"parser_html_page/models"
 )
 
 // GetResponse returns the response from the given URL.

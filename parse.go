@@ -1,7 +1,7 @@
 package parser_html_page
 
 import (
-	"parser_html_page/models"
+	"github.com/NordeN37/parser_html_page/models"
 )
 
 func GetResultParseHtml(parse models.Parse) (*[]models.ParseSelectionResult, error) {

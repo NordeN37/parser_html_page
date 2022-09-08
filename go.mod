@@ -1,4 +1,4 @@
-module parser_html_page
+module github.com/NordeN37/parser_html_page
 
 go 1.16
 
