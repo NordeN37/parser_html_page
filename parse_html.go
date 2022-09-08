@@ -1,19 +1,13 @@
 package parser_html_page
 
 import (
-	"errors"
-	"fmt"
 	"github.com/NordeN37/parser_html_page/models"
 	"github.com/PuerkitoBio/goquery"
-	"net/http"
+	"io"
 )
 
-func ParseHtml(res *http.Response, selection models.Selection) (*[]models.ParseSelectionResult, error) {
-	if res.StatusCode != 200 {
-		return nil, errors.New(fmt.Sprintf("status code error: %d %s", res.StatusCode, res.Status))
-	}
-
-	doc, err := goquery.NewDocumentFromReader(res.Body)
+func ParseHtml(res io.ReadCloser, selection models.Selection) (*[]models.ParseSelectionResult, error) {
+	doc, err := goquery.NewDocumentFromReader(res)
 	if err != nil {
 		return nil, err
 	}
