@@ -49,7 +49,7 @@ var addTests = []addTest{
 		result: &[]models.ParseSelectionResult{
 			{
 				Value: nil,
-				FoundValue: &[]models.ParseSelectionResult{
+				FoundValue: []models.ParseSelectionResult{
 					{Value: &resultH, FoundValue: nil},
 					{Value: &resultOneP, FoundValue: nil},
 					{Value: &resultTwoP, FoundValue: nil},
