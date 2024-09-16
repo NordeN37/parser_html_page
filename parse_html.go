@@ -36,7 +36,9 @@ func parseSelection(doc *goquery.Selection, selection []*models.Find) *[]models.
 
 			if startFindValue.GetValue {
 				sText := s.Text()
+				tegHref := s.AttrOr("href", "")
 				lineParse.Value = &sText
+				lineParse.TagHref = &tegHref
 			}
 
 			if startFindValue.Find != nil {
