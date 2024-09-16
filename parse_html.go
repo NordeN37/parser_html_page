@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-func ParseHtml(res io.ReadCloser, selection models.Selection) (*[]models.ParseSelectionResult, error) {
+func ParseHtml(res io.ReadCloser, selection models.Selection) ([]models.ParseSelectionResult, error) {
 	doc, err := goquery.NewDocumentFromReader(res)
 	if err != nil {
 		return nil, err
@@ -15,7 +15,7 @@ func ParseHtml(res io.ReadCloser, selection models.Selection) (*[]models.ParseSe
 	return parseSelection(doc.Selection, selection.Find), nil
 }
 
-func parseSelection(doc *goquery.Selection, selection []*models.Find) *[]models.ParseSelectionResult {
+func parseSelection(doc *goquery.Selection, selection []*models.Find) []models.ParseSelectionResult {
 	var parsSelectResult []models.ParseSelectionResult
 
 	for _, startFindValue := range selection {
@@ -49,5 +49,5 @@ func parseSelection(doc *goquery.Selection, selection []*models.Find) *[]models.
 		})
 	}
 
-	return &parsSelectResult
+	return parsSelectResult
 }

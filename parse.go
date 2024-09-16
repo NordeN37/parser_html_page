@@ -6,7 +6,7 @@ import (
 	"github.com/NordeN37/parser_html_page/models"
 )
 
-func GetResultParseHtml(parse models.Parse) (*[]models.ParseSelectionResult, error) {
+func GetResultParseHtml(parse models.Parse) ([]models.ParseSelectionResult, error) {
 	response, err := GetResponse(parse.Url, parse.HeaderSets)
 	if err != nil {
 		return nil, err
